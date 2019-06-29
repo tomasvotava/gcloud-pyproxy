@@ -10,7 +10,7 @@ def license():
 
 setup(
     name="GCloudPyProxy",
-    version="0.9rc1",
+    version="0.9rc2",
     packages=find_packages(),
     author="Tomas Votava",
     author_email="info@tomasvotava.eu",
