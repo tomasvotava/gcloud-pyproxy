@@ -6,11 +6,21 @@ class GCloudError(Exception):
     pass
 
 def gcloud_proxy(command, *args, **kwargs):
+    if "replace_underscore" in kwargs.keys():
+        replace_underscore = kwargs["replace_underscore"]
+        del kwargs["replace_underscore"]
+    else:
+        replace_underscore = True
+    flags = [
+        "--{key}=\"{value}\"".format(
+            key=(key.replace("_", "-") if replace_underscore else key),
+            value=val) for key, val in kwargs.items()
+        ]
     f = Popen(" ".join([
         "gcloud",
         command,
         *["\"{}\"".format(arg) for arg in args],
-        *["--{key}=\"{value}\"".format(key=key, value=val) for key, val in kwargs.items()],
+        *flags,
         "--format=json"
     ]),
     stdout=PIPE,

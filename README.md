@@ -35,4 +35,12 @@ gcloud.compute_instances_list(project="gcp-project-id")
 gcloud.compute_instances_start("virtual", project="gcp-project-id")
 # expands as:
 # gcloud compute instances start virtual --project="gcp-project-id"
+
+# by default, underscores in flag names are replace with dashes
+gcloud.kms_encrypt(plaintext_file="file.txt")
+# gcloud kms encrypt --plaintext-file="file.txt"
+
+# however, this can be overriden by specifying replace_underscore=False
+gcloud.kms_encrypt(plaintext_file="file.txt", replace_underscore=False)
+# gcloud kms encrypt --plaintext_file="file.txt"
 ```
