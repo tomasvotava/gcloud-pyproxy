@@ -9,7 +9,24 @@ This Python package provides a proxy class for calling gcloud commands directly 
 
 ## Installation
 
+## Via PIP
+
 ```console
+pip3 install gcloudpyproxy
+```
+
+or
+
+```console
+python3 -m pip install gcloudpyproxy
+```
+
+## Building from source
+
+```console
+wget https://github.com/tomasvotava/gcloud-pyproxy/archive/master.zip
+unzip master.zip
+cd gcloud-pyproxy-master
 python setup.py build
 python setup.py install
 ```
@@ -36,7 +53,7 @@ gcloud.compute_instances_start("virtual", project="gcp-project-id")
 # expands as:
 # gcloud compute instances start virtual --project="gcp-project-id"
 
-# by default, underscores in flag names are replace with dashes
+# by default, underscores in flag names are replaced with dashes
 gcloud.kms_encrypt(plaintext_file="file.txt")
 # gcloud kms encrypt --plaintext-file="file.txt"
 

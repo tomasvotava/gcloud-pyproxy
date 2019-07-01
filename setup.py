@@ -11,7 +11,7 @@ long_description_content_type="text/markdown"
 
 setup(
     name="GCloudPyProxy",
-    version="0.9rc4",
+    version="1.0b",
     packages=find_packages(),
     author="Tomas Votava",
     author_email="info@tomasvotava.eu",
