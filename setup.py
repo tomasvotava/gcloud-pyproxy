@@ -10,7 +10,7 @@ def license():
 
 setup(
     name="GCloudPyProxy",
-    version="0.9rc3",
+    version="0.9rc4",
     packages=find_packages(),
     author="Tomas Votava",
     author_email="info@tomasvotava.eu",
@@ -23,10 +23,13 @@ setup(
         "Source Code": "https://github.com/tomasvotava/gcloud-pyproxy"
     },
     classifiers=[
-        "License :: OSI Approved :: MIT License"
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Build Tools",
+        "Development Status :: 4 - Beta"
     ],
     long_description=long_description(),
-    download_url="https://github.com/tomasvotava/gcloud-pyproxy",
+    download_url="https://github.com/tomasvotava/gcloud-pyproxy/archive/master.zip",
     license=license()
 )
 
