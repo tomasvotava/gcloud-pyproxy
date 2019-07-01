@@ -5,8 +5,9 @@ def long_description():
         return infile.read()
 
 def license():
-    with open("LICENSE") as infile:
-        return infile.read()
+    return "MIT License"
+
+long_description_content_type="text/markdown"
 
 setup(
     name="GCloudPyProxy",
@@ -30,6 +31,7 @@ setup(
     ],
     long_description=long_description(),
     download_url="https://github.com/tomasvotava/gcloud-pyproxy/archive/master.zip",
-    license=license()
+    license=license(),
+    long_description_content_type="text/markdown"
 )
 
