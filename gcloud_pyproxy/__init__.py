@@ -27,10 +27,11 @@ def gcloud_proxy(command, *args, **kwargs):
     stderr=PIPE,
     shell=True
     )
-    if f.wait() == 0:
-        return json.loads(f.stdout.read().decode("utf-8"))
+    out, err = f.communicate()
+    if f.returncode == 0:
+        return json.loads(out.decode("utf-8"))
     else:
-        raise GCloudError(f.stderr.read().decode("utf-8"))
+        raise GCloudError(err.decode("utf-8"))
 
 class GCloud:
     def __init__(self):
